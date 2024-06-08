@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky的小店</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #f8f8f8;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #e7e7e7;
+        }
+        .container {
+            padding: 20px;
+        }
+        .product {
+            border: 1px solid #e7e7e7;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+        .contact, .social-media {
+            margin-top: 20px;
+        }
+        .social-media a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: #1a73e8;
+        }
+        .activation-code {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e7e7e7;
+            display: none;
+        }
+        footer {
+            background-color: #f8f8f8;
+            text-align: center;
+            padding: 10px;
+            border-top: 1px solid #e7e7e7;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>我的商品展示页</h1>
+    </header>
+    <div class="container">
+        <div class="product">
+            <h2>300原石</h2>
+            <img src="https://tse1-mm.cn.bing.net/th/id/OIP-C.ESvAYciotq7U65EuoUjrUAHaEK?w=318&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="商品图片">
+            <p>商品描述:300原石现在只需要9.99原，机不可失，失不再来</p>
+            <p>价格：¥9.99</p>
+            <button onclick="generateActivationCode()">扫码支付获取激活码</button>
+            <div class="activation-code" id="activation-code">
+                <p>您的激活码是：<span id="code"></span></p>
+            </div>
+        </div>
+
+        <div class="contact">
+            <h3>联系方式</h3>
+            <p>电话：123456789</p>
+            <p>邮箱：123456789@qq.com</p>
+        </div>
+
+        <div class="social-media">
+            <h3>社交媒体</h3>
+            <a href="https://space.bilibili.com/520655012?spm_id_from=333.1007.0.0">哔哩哔哩</a>
+        </div>
+    </div>
+    <footer>
+        &copy; 2024原石兑换
+    </footer>
+
+    <script>
+        function generateActivationCode() {
+            var code = 'ACT-' + Math.random().toString(36).substr(2, 9).toUpperCase();
+            document.getElementById('code').innerText = code;
+            document.getElementById('activation-code').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
